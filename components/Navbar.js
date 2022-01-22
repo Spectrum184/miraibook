@@ -6,9 +6,11 @@ import { useEffect, useRef, useState } from 'react';
 
 const Navbar = () => {
   const headerRef = useRef();
+  const headerMenuRef = useRef();
 
   const [isOpen, setIsOpen] = useState(false);
   const [onScroll, setOnScroll] = useState(false);
+  const [onSearch, setOnSearch] = useState(false);
 
   const listenScrollEvent = (e) => {
     if (window.scrollY > headerRef.current?.clientHeight) {
@@ -36,10 +38,14 @@ const Navbar = () => {
   return (
     <header>
       <HeaderTop headerRef={headerRef} />
+      {/* never mind, add one div for fixed height of navbar menu, i can't set sticky */}
+      {onScroll && (
+        <div style={{ height: headerMenuRef.current?.clientHeight }}></div>
+      )}
       <div
+        ref={headerMenuRef}
         className={clsx('w-full bg-white z-50', {
-          'fixed shadow-md transition-all duration-1000 ease-in top-0':
-            onScroll,
+          'shadow-md fixed top-0 transition ease-in-out duration-300': onScroll,
         })}
       >
         <div className="flex content-center relative justify-between max-w-screen-xl mx-auto lg:px-6">
@@ -81,7 +87,7 @@ const Navbar = () => {
           </span>
           <ul
             className={clsx(
-              'absolute top-14 z-50 w-full px-4 flex-col lg:flex lg:flex-row lg:items-center lg:relative lg:top-0 lg:px-0 bg-white',
+              'absolute top-14 z-50 w-full px-4 flex-col border-b-2 border-gray-300 lg:border-b-0 lg:flex lg:flex-row lg:items-center lg:relative lg:top-0 lg:px-0 bg-white',
               {
                 flex: isOpen,
                 hidden: !isOpen,
@@ -114,8 +120,16 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="flex items-center pr-4">
+          <div className="flex items-center pr-4 relative">
+            {onSearch && (
+              <input
+                type="search"
+                className="px-4 py-1 w-32 text-gray-800 rounded-full border border-gray-400 outline-none mr-3"
+                placeholder="search"
+              />
+            )}
             <svg
+              onClick={() => setOnSearch(!onSearch)}
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 mr-3 hover:text-pink-500 cursor-pointer text-orange-400"
               fill="none"
@@ -147,7 +161,7 @@ const Navbar = () => {
         </div>
         <div
           className={clsx(
-            'fixed bottom-6 cursor-pointer right-6 w-10 h-10 bg-gray-500 flex items-center justify-center',
+            'fixed bottom-6 cursor-pointer shadow-md right-6 w-10 h-10 bg-gray-500 flex items-center justify-center',
             {
               hidden: !onScroll,
               'block ease-in-out duration-1000 transition-all': onScroll,

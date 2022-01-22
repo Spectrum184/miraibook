@@ -33,7 +33,7 @@ export default function Home() {
         ></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen bg-pink-primary">
+      <main className="bg-pink-primary min-h-screen">
         <Navbar />
         <div className="w-full bg-green-primary">
           <div className="max-w-screen-xl px-2 flex items-center mx-auto text-xl font-bold text-white h-36 md:text-3xl md:px-4 lg:px-6">

@@ -18,3 +18,16 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* ----------------PATTERN---------------- */
+.pattern-rhombus {
+  background-color: #0e581a;
+  opacity: 0.8;
+  background-image: linear-gradient(135deg, #0e581a 25%, transparent 25%),
+    linear-gradient(225deg, #0e581a 25%, transparent 25%),
+    linear-gradient(45deg, #0e581a 25%, transparent 25%),
+    linear-gradient(315deg, #0e581a 25%, #4b614d 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}

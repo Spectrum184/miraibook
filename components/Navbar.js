@@ -161,10 +161,10 @@ const Navbar = () => {
         </div>
         <div
           className={clsx(
-            'fixed bottom-6 cursor-pointer shadow-md right-6 w-10 h-10 bg-gray-500 flex items-center justify-center',
+            'bottom-8 fixed cursor-pointer shadow-md right-8 top-auto z-50 left-auto w-10 h-10 bg-gray-400 flex items-center justify-center',
             {
               hidden: !onScroll,
-              'block ease-in-out duration-1000 transition-all': onScroll,
+              block: onScroll,
             }
           )}
           onClick={scrollToTop}

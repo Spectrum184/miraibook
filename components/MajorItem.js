@@ -23,10 +23,10 @@ const MajorItem = ({ star, name, description }) => {
           </h4>
           <p>{description}</p>
         </div>
-        <span className="rounded-full cursor-pointer p-2 flex-shrink-0 text-gray-600 bg-gray-200">
+        <span className="rounded-full cursor-pointer p-4 flex-shrink-0 text-gray-600 bg-gray-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-2 w-2"
+            className="h-3 w-3"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

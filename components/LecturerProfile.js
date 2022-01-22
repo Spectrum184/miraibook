@@ -20,7 +20,7 @@ const LecturerProfile = ({
           layout="fill"
         />
       </span>
-      <div className="flex flex-col items-center flex-1 md:ml-4 md:items-start">
+      <div className="flex flex-col items-center my-3 flex-1 md:my-0 md:ml-6 md:items-start">
         <h3 className="text-lg text-blue-500 hover:text-pink-500 cursor-pointer">
           {specialty.toUpperCase()}
         </h3>

@@ -32,6 +32,10 @@ export default function Home() {
           content="https://res.cloudinary.com/sonobe/image/upload/v1639824550/iroppoi-social/busknbozkdp1mwcb10qp.jpg"
         ></meta>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
       </Head>
       <main className="bg-pink-primary min-h-screen">
         <Navbar />
